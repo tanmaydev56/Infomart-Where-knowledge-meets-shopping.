@@ -14,11 +14,11 @@ export default async function NewsArticles({
   params,
   searchParams,
 }: {
-  params: { articleId: string };
-  searchParams?: { lang?: "en" | "es" | "fr" };
+  params: Promise<{ articleId: string }> ;
+  searchParams?:Promise< { lang?: "en" | "es" | "fr" }>;
 }) {
-  const { articleId } = params;
-  const lang = searchParams?.lang || "en";
+  const { articleId } = await params;
+  const lang = (await searchParams)?.lang || "en";
 
   try {
     // Fetch the article from the Next.js API route
