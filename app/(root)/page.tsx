@@ -60,23 +60,29 @@ export default function Home() {
           Explore top products and insightful articles curated just for you.
         </p>
 
-        {/* Login Button with Floating Animation */}
         <Link
-          href="/signin"
-          ref={(el) => el && buttonRefs.current.push(el)}
-          className="bg-black w-40 h-12 rounded-full flex justify-center items-center text-white text-lg font-semibold transition hover:bg-gray-800 mt-6 shadow-lg"
-        >
-          Sign In
-        </Link>
+  href="/signin"
+  ref={(el) => {
+    if (el) {
+      buttonRefs.current.push(el);
+    }
+  }}
+  className="bg-black w-40 h-12 rounded-full flex justify-center items-center text-white text-lg font-semibold transition hover:bg-gray-800 mt-6 shadow-lg"
+>
+  Sign In
+</Link>
 
-        {/* Products Button with Floating Animation */}
-        <Link
-          href="/products"
-          ref={(el) => el && buttonRefs.current.push(el)}
-          className="bg-blue-500 w-72 h-12 flex justify-center items-center text-white font-semibold rounded-full text-lg transition hover:bg-blue-700 mt-4 shadow-lg"
-        >
-          Browse Products
-        </Link>
+<Link
+  href="/products"
+  ref={(el) => {
+    if (el) {
+      buttonRefs.current.push(el);
+    }
+  }}
+  className="bg-blue-500 w-72 h-12 flex justify-center items-center text-white font-semibold rounded-full text-lg transition hover:bg-blue-700 mt-4 shadow-lg"
+>
+  Browse Products
+</Link>
       </div>
      
     </div>
